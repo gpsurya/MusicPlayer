@@ -29,7 +29,7 @@ ydl_opts = {
 ydl = YoutubeDL(ydl_opts)
 links=[]
 finalurl=""
-STREAM=os.environ.get("STREAM_URL", "https://node-31.zeno.fm/4g65yz9gg0quv.aac?rj-ttl=5&rj-tok=AAABdtuvkw4A9ORsR7htLe8_1Q")
+STREAM=os.environ.get("STREAM_URL", "https://eu10.fastcast4u.com/clubfmuae")
 regex = r"^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+"
 match = re.match(regex,STREAM)
 if match:
@@ -42,10 +42,10 @@ else:
     finalurl=STREAM
 
 class Config:
-    ADMIN = os.environ.get("ADMINS", '709294532')
+    ADMIN = os.environ.get("ADMINS", '')
     ADMINS = [int(admin) if re.search('^\d+$', admin) else admin for admin in (ADMIN).split()]
-    API_ID = int(os.environ.get("API_ID", '1062262'))
-    CHAT = int(os.environ.get("CHAT", "-1001215436654"))
+    API_ID = int(os.environ.get("API_ID", ''))
+    CHAT = int(os.environ.get("CHAT", ""))
     LOG_GROUP=os.environ.get("LOG_GROUP", "")
     if LOG_GROUP:
         LOG_GROUP=int(LOG_GROUP)
@@ -53,7 +53,7 @@ class Config:
         LOG_GROUP=None
     STREAM_URL=finalurl
     ADMIN_ONLY=os.environ.get("ADMIN_ONLY", "N")
-    ARQ_API=os.environ.get("ARQ_API", "YQLVRM-TYUGMT-YXPFEJ-QWYZWQ-ARQ")
+    ARQ_API=os.environ.get("ARQ_API", "")
     REPLY_MESSAGE=os.environ.get("REPLY_MESSAGE", None)
     if REPLY_MESSAGE:
         REPLY_MESSAGE=REPLY_MESSAGE
@@ -64,8 +64,8 @@ class Config:
         EDIT_TITLE=None
     DURATION_LIMIT=int(os.environ.get("MAXIMUM_DURATION", 15))
     DELAY = int(os.environ.get("DELAY", 10))
-    API_HASH = os.environ.get("API_HASH", "842fe1d408d10364f90ec785a533feaf")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "1914403790:AAFBfFSp7sldc8E1SqfjbApkrcFlk0NiQt8") 
-    SESSION = os.environ.get("SESSION_STRING", "BQCtOF_k9zTRLc95bbq2rwe_RV816F5wCZisGJZ_bh-0x_h1053fBhot6ISBR5O_yOfkr5nWQkhAqv89wyW_9ofbcHOdqNx01CzgpjXsk7NsE8-pjo15OUXKPAXoSXFggWYxKHhZ6Ziuxh-mAulehTwwfO-Zuwf0KTM1s934QT6f4XgeoEhpLqoTHZ0-SlYMqf7pi18AM2-Xij5nOErcobB2CT2WWt50qD58zpsNVGlXwl2WYwDRqz3HWusVtO4jfwgK7oElzit6d1fSgzrLuKVvDwxLZzfDu8pl9jIx8jmkfD-CI83Udb6YD5BLL07Q3oj4VIEEX8jOqQAoXOTer9gTKkb5xAA")
+    API_HASH = os.environ.get("API_HASH", "")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "") 
+    SESSION = os.environ.get("SESSION_STRING", "")
     playlist=[]
     msg = {}
