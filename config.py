@@ -42,9 +42,9 @@ else:
     finalurl=STREAM
 
 class Config:
-    ADMIN = os.environ.get("ADMINS", '709294532')
+    ADMIN = os.environ.get("ADMINS", "709294532")
     ADMINS = [int(admin) if re.search('^\d+$', admin) else admin for admin in (ADMIN).split()]
-    API_ID = int(os.environ.get("API_ID", '7670903'))
+    API_ID = int(os.environ.get("API_ID", "7670903"))
     CHAT = int(os.environ.get("CHAT", "-1001215436654"))
     LOG_GROUP=os.environ.get("LOG_GROUP", "-1001215436654")
     if LOG_GROUP:
